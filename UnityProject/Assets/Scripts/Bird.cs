@@ -61,6 +61,8 @@ public class Bird : MonoBehaviour
     {
         isDead = true;
         gm.GameOver();
+        // 靜態成員：類別.靜態成員
+        Ground.speed = 0;
     }
 
     /// <summary>
