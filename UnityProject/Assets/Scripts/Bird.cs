@@ -14,6 +14,10 @@ public class Bird : MonoBehaviour
 
     public GameManager gm;
 
+    [Header("音效區域")]
+    public AudioSource aud;
+    public AudioClip soundJump;
+
     private void Update()
     {
         Jump();
