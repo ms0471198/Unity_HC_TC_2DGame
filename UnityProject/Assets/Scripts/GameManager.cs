@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;   // 引用 介面 API
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject pipe;     // GameObject 可以存放場景上的物件或專案內的預製物
     [Header("結束畫面")]
     public GameObject goFinal;
+    public Text textScore;
 
     /// <summary>
     /// 加分
@@ -18,6 +20,8 @@ public class GameManager : MonoBehaviour
     public void AddScore(int add = 1)
     {
         print("加分!!!");
+        score = score + add;
+        textScore.text = score.ToString();
     }
 
     /// <summary>
