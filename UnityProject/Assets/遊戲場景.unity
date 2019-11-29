@@ -1713,6 +1713,10 @@ MonoBehaviour:
   goGM: {fileID: 1552742087}
   r2d: {fileID: 1981344852}
   gm: {fileID: 1552742088}
+  aud: {fileID: 1981344854}
+  soundJump: {fileID: 8300000, guid: 801e6e52b7de5f946ba5e216db88ae1c, type: 3}
+  soundHit: {fileID: 8300000, guid: e8471972d17eeea4191cfd02db4735b1, type: 3}
+  soundPass: {fileID: 8300000, guid: 387b71cac6ae57847934ae21cdad5440, type: 3}
 --- !u!50 &1981344852
 Rigidbody2D:
   serializedVersion: 4

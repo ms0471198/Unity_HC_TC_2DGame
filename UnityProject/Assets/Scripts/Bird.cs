@@ -16,7 +16,7 @@ public class Bird : MonoBehaviour
 
     [Header("音效區域")]
     public AudioSource aud;
-    public AudioClip soundJump;
+    public AudioClip soundJump, soundHit, soundPass;
 
     private void Update()
     {
@@ -44,7 +44,7 @@ public class Bird : MonoBehaviour
     {
         if (collision.gameObject.name == "通過")
         {
-            gm.AddScore();
+            PassPipe();
         }
     }
 
@@ -63,6 +63,8 @@ public class Bird : MonoBehaviour
             r2d.Sleep();                            // 2D 剛體.睡著() 重設所有物理資料
             r2d.gravityScale = 1;                   // 2D 剛體.地心引力 = 1
             r2d.AddForce(new Vector2(0, jump));     // 2D 剛體.推力(二為向量)
+
+            aud.PlayOneShot(soundJump, 1.5f);       // 音源.播放一次(音效片段，音量)
         }
 
         r2d.SetRotation(angle * r2d.velocity.y);    // 2D 剛體.設定角度(角度)
@@ -76,7 +78,8 @@ public class Bird : MonoBehaviour
     {
         isDead = true;
         gm.GameOver();
-        Ground.speed = 0;           // 靜態成員：類別.靜態成員
+        Ground.speed = 0;                   // 靜態成員：類別.靜態成員
+        aud.PlayOneShot(soundHit, 1.5f);
     }
 
     /// <summary>
@@ -84,6 +87,7 @@ public class Bird : MonoBehaviour
     /// </summary>
     private void PassPipe()
     {
-
+        gm.AddScore();
+        aud.PlayOneShot(soundPass, 1.5f);
     }
 }
