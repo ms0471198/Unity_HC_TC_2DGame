@@ -15,9 +15,9 @@ public class GameManager : MonoBehaviour
     /// 加分
     /// </summary>
     /// <param name="add">要添加的分數，預設為 1</param>
-    private void AddScore(int add = 1)
+    public void AddScore(int add = 1)
     {
-
+        print("加分!!!");
     }
 
     /// <summary>

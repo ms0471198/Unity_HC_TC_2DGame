@@ -35,6 +35,14 @@ public class Bird : MonoBehaviour
             Dead();
         }
     }
+    // 觸發開始事件：物件觸發離開時執行一次
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "通過")
+        {
+            gm.AddScore();
+        }
+    }
 
     /// <summary>
     /// 小雞跳躍功能。
@@ -64,8 +72,7 @@ public class Bird : MonoBehaviour
     {
         isDead = true;
         gm.GameOver();
-        // 靜態成員：類別.靜態成員
-        Ground.speed = 0;
+        Ground.speed = 0;           // 靜態成員：類別.靜態成員
     }
 
     /// <summary>
