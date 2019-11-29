@@ -30,7 +30,10 @@ public class Bird : MonoBehaviour
     // 觸發開始事件：物件觸發開始時執行一次 (紀錄碰撞物件資訊) - 針對有勾選 isTrigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Dead();
+        if (collision.gameObject.name == "水管 - 上" || collision.gameObject.name == "水管 - 下")
+        {
+            Dead();
+        }
     }
 
     /// <summary>
