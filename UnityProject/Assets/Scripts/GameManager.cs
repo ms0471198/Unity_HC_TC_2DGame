@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         goFinal.SetActive(true);
+        CancelInvoke("SpawnPipe");  // 取消調用 ("方法名稱");
     }
 
     /// <summary>
