@@ -1,9 +1,21 @@
-﻿using UnityEngine;
-using UnityEngine.UI;   // 引用 介面 API
+﻿using UnityEngine;      // 引用 Unity API
 
-public class GameManager : MonoBehaviour
+//類別 類別名稱
+public class First : MonoBehaviour
 {
-    [Header("目前分數")]
+    // 程式內容
+    // 宣告變數 - 定義欄位 Field
+    // 修飾詞 欄位類型  欄位名稱 結束
+    // 私人 - 隱藏 private(預設)
+    // 公開 - 顯示 public
+    public int coin;                    // 整數
+    public float speed;                 // 浮點數
+    public string prop;                 // 字串
+    public bool dead;                   //布林值
+}
+
+// 程式內容
+[Header("目前分數")]
     public int score;
     [Header("最佳分數")]
     public int scoreHeight;
@@ -23,6 +35,8 @@ public class GameManager : MonoBehaviour
         print("加分!!!");
         score = score + add;
         textScore.text = score.ToString();
+
+        SetHeightSeore();
     }
 
     /// <summary>
@@ -30,8 +44,12 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void SetHeightScore()
     {
-
-    }
+        if(score > scoreHeight)
+        {
+            PlayerPrefs.SetInt("最佳分數", seore);
+        }
+                
+                }
 
     /// <summary>
     /// 遊戲結束
@@ -42,6 +60,9 @@ public class GameManager : MonoBehaviour
         CancelInvoke("SpawnPipe");  // 取消調用 ("方法名稱");
     }
 
+   
+    
+    
     /// <summary>
     /// 生成水管的方法。
     /// </summary>
@@ -66,5 +87,11 @@ public class GameManager : MonoBehaviour
         // Invoke("SpawnPipe", 1.5f);
         // 延遲重複調用("方法名稱"，延遲時間，重複頻率);
         InvokeRepeating("SpawnPipe", 0, 1.8f);
+
+        seoreHeight -PlayerPrefs.GetInt("最佳分數")
+        textHright.text - PlayerPrefs.GetInt("最佳分數").ToString()；
     }
-}
+
+   }
+{
+      
