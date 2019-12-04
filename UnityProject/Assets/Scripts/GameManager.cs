@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [Header("結束畫面")]
     public GameObject goFinal;
     public Text textScore;
+    public Text textHeight;
 
     /// <summary>
     /// 加分

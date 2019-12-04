@@ -42,7 +42,7 @@ public class Bird : MonoBehaviour
     // 觸發開始事件：物件觸發離開時執行一次
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "通過")
+        if (collision.gameObject.name == "通過" && !isDead)
         {
             PassPipe();
         }
@@ -76,6 +76,7 @@ public class Bird : MonoBehaviour
     /// </summary>
     private void Dead()
     {
+        if (isDead) return;                 // 如果死亡 跳出
         isDead = true;
         gm.GameOver();
         Ground.speed = 0;                   // 靜態成員：類別.靜態成員
